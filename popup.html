@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>PowerPoint NLP Extractor</title>
+    <script src="jspdf.min.js"></script>
+    <script src="FileSaver.js"></script>
+    <script src="jspdf.plugin.autotable.min.js"></script>
+    <script src="html2pdf.bundle.min.js"></script>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+</head>
+<style>
+    .btn-xl {
+        padding: 10px 20px;
+        font-size: 20px;
+        border-radius: 10px;
+    }
+</style>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Extractify</a>
+    </nav>
+    <div class="container my-5">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <div style="overflow: auto; white-space: nowrap;" class="custom-file">
+                    <input type="file" id="file-input" class="custom-file-input">
+                    <label class="custom-file-label" for="file-input">Choose file</label>
+                </div>
+                <button id="submit-button" style="overflow: auto; white-space: nowrap;"class="btn btn-primary btn-lg btn-block my-3">Extract Terms and Definitions</button>
+                <button id="save-pdf-button" class="d-none btn btn-secondary btn-block">Save as PDF</button>
+                <p id="warning-message" class="d-none"></p>
+                <div class="table-responsive">
+                    <table class="table" id="output">
+                        <thead>
+                            <tr>
+                                <th>Terms</th>
+                                <th>Definitions</th>
+                                <th>Images</th>
+                            </tr>
+                        </thead>
+                        <tbody id="terms-defs"></tbody>
+                    </table>
+                </div>
+                <button id="save-button" class="btn btn-secondary btn-block my-3" style="display: none;">Save Terms and Definitions</button>
+                <button id="save-word-button" class="btn btn-secondary btn-block" style="display: none;">Save as Word</button>
+                <button id="save-txt-button" class="btn btn-secondary btn-block" style="display: none;">Save as .txt</button>
+
+            </div>
+        </div>
+    </div>
+    <script src="popup.js"></script>
+</body>
+</html>
